@@ -18,8 +18,6 @@ body{
 
 /* LAYOUT */
 
-
-
 #PRESENTAZIONE{
     display:flex;
     width:668px; height: auto;
@@ -29,81 +27,67 @@ body{
     /* border:3px solid blue; */
 }
 
-
 .contenitore-header{
     width:600px;
     border-left:5px solid #F424B9;
     border-radius: 50%;
 }
 
+/* animazione per comparsa graduale nome */
 path[data-descr="Meyer1"]{
     opacity:0;
     animation:comparsa 1s 1s forwards;
-
 }
 path[data-descr="Meyer2"]{
     opacity:0;
     animation:comparsa 1s 1.5s forwards;
-
 }
 path[data-descr="Meyer3"]{
     opacity:0;
     animation:comparsa 1s 2s forwards;
-
 }
 path[data-descr="Meyer4"]{
     opacity:0;
     animation:comparsa 1s 2.5s forwards;
-
 }
 path[data-descr="Meyer5"]{
     opacity:0;
     animation:comparsa 1s 3s forwards;
-
 }
 path[data-descr="Riccardo1"]{
     opacity:0;
     animation:comparsa 1s 3.5s forwards;
-
 }
 path[data-descr="Riccardo2"]{
     opacity:0;
     animation:comparsa 1s 4s forwards;
-
 }
 path[data-descr="Riccardo3"]{
     opacity:0;
     animation:comparsa 1s 4.5s forwards;
-
 }
 path[data-descr="Riccardo4"]{
     opacity:0;
     animation:comparsa 1s 5s forwards;
-
 }
 path[data-descr="Riccardo5"]{
     opacity:0;
     animation:comparsa 1s 5.5s forwards;
-
 }
 path[data-descr="Riccardo6"]{
     opacity:0;
     animation:comparsa 1s 6s forwards;
-
 }
 path[data-descr="Riccardo7"]{
     opacity:0;
     animation:comparsa 1s 6.5s forwards;
-
 }
 path[data-descr="Riccardo8"]{
     opacity:0;
     animation:comparsa 1s 7s forwards;
-
 }
 
-
-
+/* animazione per argomenti della presentazione (zoom) */
 g[fill="#000000"]{
     animation: prova 2s 7s forwards;
     opacity: 0;
@@ -111,6 +95,7 @@ g[fill="#000000"]{
 }
 
 
+/* ANIMAZIONI */
 @keyframes prova{
     to{
         opacity: 1;
@@ -118,21 +103,21 @@ g[fill="#000000"]{
     }
 }
 
-
 @keyframes comparsa {
     0%{
         opacity:0;
-
     }
 
     100%{
         opacity:1;
-
     }
 }
 
+/* ANIMAZIONI */
 
 
+
+/* Gestione hover del bottone e del testo circolare */
 .bottone{
     width:68px;
     position: relative;
@@ -171,14 +156,55 @@ g[fill="#000000"]{
     /* animation: rotazione 3s infinite; */
 }
 
+/* MEDIA QUERIES */
+@media (max-width:768px) {
+    #PRESENTAZIONE{
+        flex-wrap: wrap;
+        width:368px;
+        justify-content: center;
+        height:auto;
+    }
+
+    .contenitore-header{
+        margin-left:20%;
+        margin-bottom:20%;
+        width:100%;
+        border: none;
+    }
+
+    .bottone{
+        margin-left:40%;
+        
+    }
+
+    #bottone-circolare{
+        position: relative;
+        fill:blue;
+        transition: width 0.5s;
+
+    }
+
+    
+    #testo-circolare{
+        width:200%; height:auto;
+        transform: translate(-50%,-50%);
+
+        transition: width 0.5s;
+        font-size:10px
+    }
+
+}
+
+/* MEDIA QUERIES */
 
 
+
+/* Gestione SVGs ed animazioni */
 svg{
     width:100%;height: 100%;
     /* border: 3px solid green; */
 
 }
-
 
 svg path[data-descr="EDUCAZIONE CIVICA"]{
     stroke-dasharray: 100%;
@@ -189,7 +215,6 @@ svg path[data-descr="EDUCAZIONE CIVICA"]{
 
 }
 
-
 svg path[data-descr="DONNE ED INCARICHI"]{
     stroke-dasharray: 100%;
     /* stroke-dashoffset: 99%; */
@@ -198,7 +223,6 @@ svg path[data-descr="DONNE ED INCARICHI"]{
     animation: outline 2s 5s forwards cubic-bezier(0.1, 0.3, 0.9, 0.6), riempi 2s 6s forwards cubic-bezier(0.075, 0.82, 0.165, 1);
 
 }
-
 
 svg path[data-descr="DI RILEVANZA"]{
     stroke-dasharray: 100%;
@@ -209,7 +233,6 @@ svg path[data-descr="DI RILEVANZA"]{
 
 }
 
-
 svg path[data-descr="inizio linea"]::before{
     content: ("prova");
     border: 2px solid black; 
@@ -218,7 +241,7 @@ svg path[data-descr="inizio linea"]::before{
     display:block;
 
 }
-/* LAYOUT */
+
 
 
 /* ANIMAZIONI */
@@ -258,39 +281,3 @@ svg path[data-descr="inizio linea"]::before{
 /* UTILITIES */
 
 
-@media (max-width:768px) {
-    #PRESENTAZIONE{
-        flex-wrap: wrap;
-        width:368px;
-        justify-content: center;
-        height:auto;
-    }
-
-    .contenitore-header{
-        margin-left:10%;
-        width:100%;
-        border: none;
-    }
-
-    #bottone-circolare{
-        /* width:100%;
-        height:auto; */
-        margin:0 auto;
-        position: relative;
-        fill:blue;
-        transition: width 0.5s;
-    }
-
-    
-    #testo-circolare{
-        width:200%; height:auto;
-
-        
-        transform: translate(-50%,-50%);
-        z-index:-1;
-        transition: width 0.5s;
-        font-size:10px
-    }
-
-
-}
