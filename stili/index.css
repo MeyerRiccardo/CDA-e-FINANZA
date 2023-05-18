@@ -1,0 +1,293 @@
+/* GENERALI */
+*{box-sizing: border-box;}
+
+body,html{
+    margin:0; padding:0; 
+    overflow: hidden;
+    background-color: rgb(255, 240, 240);
+}
+
+body{
+    width: 100%;height:100vh;
+
+}
+
+
+/* ELEMENTI */
+
+
+/* LAYOUT */
+
+
+
+#PRESENTAZIONE{
+    display:flex;
+    width:668px; height: auto;
+    position: absolute;
+    top:50%;left: 50%;
+    transform: translate(-50%,-50%);
+    /* border:3px solid blue; */
+}
+
+
+.contenitore-header{
+    width:600px;
+    border-left:5px solid #F424B9;
+    border-radius: 50%;
+}
+
+path[data-descr="Meyer1"]{
+    opacity:0;
+    animation:comparsa 1s 1s forwards;
+
+}
+path[data-descr="Meyer2"]{
+    opacity:0;
+    animation:comparsa 1s 1.5s forwards;
+
+}
+path[data-descr="Meyer3"]{
+    opacity:0;
+    animation:comparsa 1s 2s forwards;
+
+}
+path[data-descr="Meyer4"]{
+    opacity:0;
+    animation:comparsa 1s 2.5s forwards;
+
+}
+path[data-descr="Meyer5"]{
+    opacity:0;
+    animation:comparsa 1s 3s forwards;
+
+}
+path[data-descr="Riccardo1"]{
+    opacity:0;
+    animation:comparsa 1s 3.5s forwards;
+
+}
+path[data-descr="Riccardo2"]{
+    opacity:0;
+    animation:comparsa 1s 4s forwards;
+
+}
+path[data-descr="Riccardo3"]{
+    opacity:0;
+    animation:comparsa 1s 4.5s forwards;
+
+}
+path[data-descr="Riccardo4"]{
+    opacity:0;
+    animation:comparsa 1s 5s forwards;
+
+}
+path[data-descr="Riccardo5"]{
+    opacity:0;
+    animation:comparsa 1s 5.5s forwards;
+
+}
+path[data-descr="Riccardo6"]{
+    opacity:0;
+    animation:comparsa 1s 6s forwards;
+
+}
+path[data-descr="Riccardo7"]{
+    opacity:0;
+    animation:comparsa 1s 6.5s forwards;
+
+}
+path[data-descr="Riccardo8"]{
+    opacity:0;
+    animation:comparsa 1s 7s forwards;
+
+}
+
+
+
+g[fill="#000000"]{
+    animation: prova 2s 7s forwards;
+    transform: scale(0);
+}
+
+
+@keyframes prova{
+    to{
+        transform: scale(1);
+    }
+}
+
+
+@keyframes comparsa {
+    0%{
+        opacity:0;
+
+    }
+
+    100%{
+        opacity:1;
+
+    }
+}
+
+
+
+.bottone{
+    width:68px;
+    position: relative;
+}
+
+#bottone-circolare{
+    width:100%;
+    height:auto;
+    position:absolute;
+    top:50%;left: 50%;
+    transform: translate(-50%,-50%);
+    fill:blue;
+    transition: width 0.5s;
+}
+
+#bottone-circolare:hover{
+    fill:#F424B9;
+    width:125%;
+    height: auto;
+    filter:drop-shadow(3px 3px 3px black)
+}
+
+#testo-circolare{
+    width:50%; height:auto;
+    position:absolute;
+    top:50%;left: 50%;
+    transform: translate(-50%,-50%);
+    z-index:-1;
+    transition: width 0.5s;
+}
+
+#bottone-circolare:hover + #testo-circolare{
+    width:200%;
+    height: auto;
+    /* filter:drop-shadow(3px 3px 3px black); */
+    /* animation: rotazione 3s infinite; */
+}
+
+
+
+svg{
+    width:100%;height: 100%;
+    /* border: 3px solid green; */
+
+}
+
+
+svg path[data-descr="EDUCAZIONE CIVICA"]{
+    stroke-dasharray: 100%;
+    /* stroke-dashoffset: 99%; */
+    stroke-linecap: round;
+    opacity:0;
+    animation: outline 2s 2s forwards cubic-bezier(0.1, 0.3, 0.9, 0.6), riempi 2s 3s forwards cubic-bezier(0.075, 0.82, 0.165, 1);
+
+}
+
+
+svg path[data-descr="DONNE ED INCARICHI"]{
+    stroke-dasharray: 100%;
+    /* stroke-dashoffset: 99%; */
+    stroke-linecap: round;
+    opacity:0;
+    animation: outline 2s 5s forwards cubic-bezier(0.1, 0.3, 0.9, 0.6), riempi 2s 6s forwards cubic-bezier(0.075, 0.82, 0.165, 1);
+
+}
+
+
+svg path[data-descr="DI RILEVANZA"]{
+    stroke-dasharray: 100%;
+    /* stroke-dashoffset: 99%; */
+    stroke-linecap: round;
+    opacity:0;
+    animation: outline 2s 8s forwards cubic-bezier(0.1, 0.3, 0.9, 0.6), riempi 2s 9s forwards cubic-bezier(0.075, 0.82, 0.165, 1);
+
+}
+
+
+svg path[data-descr="inizio linea"]::before{
+    content: ("prova");
+    border: 2px solid black; 
+    width:100px;
+    height:100px;
+    display:block;
+
+}
+/* LAYOUT */
+
+
+/* ANIMAZIONI */
+@keyframes outline{
+    0%{
+        opacity: 1;
+    }
+    from{
+
+        stroke-dashoffset: 100%;
+    }
+    to{
+        opacity: 1;
+        stroke-dasharray: 100%;
+        stroke-dashoffset: 0%;
+    }
+}
+
+
+@keyframes riempi{
+    from{
+        fill:transparent;
+    }
+    to{
+        fill:black;
+    }
+}
+/* ANIMAZIONI */
+
+
+
+
+
+/* UTILITIES */
+
+
+/* UTILITIES */
+
+
+@media (max-width:768px) {
+    #PRESENTAZIONE{
+        flex-wrap: wrap;
+        width:368px;
+        justify-content: center;
+        height:auto;
+    }
+
+    .contenitore-header{
+        width:100%;
+        border: none;
+    }
+
+    #bottone-circolare{
+        /* width:100%;
+        height:auto; */
+        margin:0 auto;
+        position: relative;
+        fill:blue;
+        transition: width 0.5s;
+    }
+
+    
+    #testo-circolare{
+        width:200%; height:auto;
+
+        
+        transform: translate(-50%,-50%);
+        z-index:-1;
+        transition: width 0.5s;
+        font-size:10px
+    }
+
+
+}
