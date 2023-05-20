@@ -1,0 +1,277 @@
+@import url('costanti.css');
+
+/* GENERALI */
+*{box-sizing: border-box;}
+
+body,html{
+    margin:0; padding:0; 
+    /* overflow: hidden; */
+    background-color: rgb(255, 240, 240);
+    font-size:var(--fz);
+    opacity: 0;
+    animation: display 1.5s forwards cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+@keyframes display {
+    to{
+        opacity: 1;
+    }
+}
+
+
+body{
+    width: 100%;
+    font-family: var(--pFont)
+}
+
+main,header{
+    max-width:1350px;
+    margin:0 auto;
+
+}
+
+
+nav{
+    position:absolute;
+    top: 10%; 
+    left:50%;
+    transform: translatex(-50%);   
+
+
+}
+
+
+.menu{
+    display: flex;
+    flex-flow: row nowrap;
+    /* align-items: center; */
+    /* border:2px solid black; */
+
+    width: 700px;
+    height: 70px;
+}
+
+
+
+
+
+
+
+
+
+nav a{
+    font-size: var(--fz);
+    text-transform: uppercase;
+    color: white;
+    text-decoration: none;
+
+    line-height: 60px;
+
+    z-index: 1;
+    display: inline-block;
+    text-align: center;
+    /* border:3px solid blue; */
+
+    transition: all 1.5s;
+}
+
+
+
+nav a:nth-child(1){
+    flex: 1 1 200px;
+}
+nav a:nth-child(1):hover{
+    flex: 1 1 400px;
+    text-shadow: 2px 2px 2px #F424B9;
+    transform: scale(1.25);
+}
+nav a:nth-child(3){
+    flex: 1 1 200px;
+}
+nav a:nth-child(3):hover{
+    flex: 1 1 400px;
+    text-shadow: 2px 2px 2px #F424B9;
+    transform: scale(1.25);
+
+}
+
+nav a:nth-child(2){
+    flex: 1 1 300px;
+}
+
+
+nav a:nth-child(2):hover{
+    flex: 1 1 600px;
+    /* height: auto; */
+    transform: scale(1.25);
+
+}
+
+
+
+
+img{
+    height:100%;
+    width:auto;
+}
+
+
+h1{
+    font-size: 3rem;
+    
+}
+
+.hero{
+    background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(0,0,0,0.822391456582633) 0%, rgba(255,255,255,0) 100%, rgba(255,255,255,1) 100%),url(../immagini/nav-sfondo.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;width: 100%;
+    background-attachment: fixed;
+
+}
+
+.hero__content{
+    color: white;
+    position:absolute;
+    
+    bottom:10%;
+    
+    padding-left:20vw;
+    padding-right:10vw;
+    border:2px solid black;
+
+    display: flex;
+    justify-content: center;
+    flex-flow: column wrap;
+}
+
+@media (max-width:768px) {
+
+    body,html{
+        font-size: calc(var(--fz)*0.80);
+    }
+
+
+    #MENU {
+        position: absolute;
+        top: -200%; 
+        left: 50%;
+        transform: translate(-50%,-50%);   
+
+    }
+
+
+    .menu{
+        display: flex;
+        flex-flow: column nowrap;
+        /* border:2px solid black; */
+
+        width: 300px;
+        height: calc((70px * 3));
+        gap: 10px;
+        
+
+    }
+
+
+    nav a{
+        flex: 1 1 100%;
+        height: 60px;
+
+        
+    }
+
+
+    .hero__content
+    {
+        padding-left:10vw;
+        padding-right:10vw;
+        position: fixed;
+    }
+
+
+
+    .hamburger{
+        height: 50px; width: 50px;
+        /* background-color: black; */
+        top: 50px; right: 50px;
+        display: block;
+        z-index: 3;
+        position:fixed;
+
+        
+    }
+
+    .hamburger span{
+        background: white;
+        width: 100%;
+        height: 2px;
+        margin-bottom: 15px;
+        display: block;
+
+    }
+
+    #MENU.menu--aperto{
+        /* display: none; */
+        position: fixed;
+        top: 50%; left: 50%;
+        transform: translate(-50%,-50%);   
+        height: 100vh; width: 100%;
+
+        background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(0,0,0,0.822391456582633) 0%, rgba(255,255,255,0) 100%, rgba(255,255,255,1) 100%),url(../immagini/hamburger.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        transition: all 1s;
+        display: flex ;
+        align-items: center;
+        justify-content: center;
+        z-index: 2;
+
+    }
+}
+
+
+
+
+h5{
+    font-size: 1rem;
+    margin:0; padding:0;
+}
+
+li{
+    margin-bottom:10px;
+    /* border: 3px solid red; */
+    list-style-type: none;
+    transition: all 1s;
+}
+
+
+li:nth-child(even):hover{
+    margin-left: 10%;
+}
+li:nth-child(odd):hover{
+    margin-right: 10%;
+
+}
+
+a{
+    text-decoration: none;
+    color:white;
+}
+
+
+
+
+#MAIN{
+    position: relative;
+    z-index:3;
+    background: white;
+    height: 100vh;
+    width: 100%;
+}
+
+
+
+
+
