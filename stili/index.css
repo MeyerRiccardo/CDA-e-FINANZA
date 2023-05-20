@@ -91,15 +91,20 @@ path[data-descr="Riccardo8"]{
 g[fill="#000000"]{
     animation: prova 2s 7s forwards;
     opacity: 0;
-    transform: scale(0.5);
+    
 }
 
 
 /* ANIMAZIONI */
 @keyframes prova{
-    to{
+    from{
         opacity: 1;
+        transform: scale(1.5);
+    }
+    to{
         transform: scale(1);
+        opacity: 1;
+
     }
 }
 
