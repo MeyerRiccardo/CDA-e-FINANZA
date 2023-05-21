@@ -351,10 +351,10 @@ span[data-descr]:active::after{
     height: var(--BtnFrGrandezza);
     position: absolute;
     bottom:0; 
-    /* border: 2px solid black; */
+    border: 2px solid black;
 
     transition: all 0.25s;
-
+    
 }
 
 #freccia-circolare{
@@ -380,20 +380,17 @@ span[data-descr]:active::after{
     filter:drop-shadow(3px 3px 3px black)
 }
 
-.watch100{
+.watchBtn{
     opacity: 0;
-
     transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
 }
 
-.show100{
+.showBtn{
     /* Da vedere per comparsa dall'alto / basso (translate non funziona) */
-
     opacity: 1;
+
 }
-
-
-
 
 /* Media query per ridimensionamento bottone e layout testo */
 @media (max-width:768px) {
@@ -435,10 +432,20 @@ span[data-descr]:active::after{
 /* Gestione Fade-in */
 *.watch{
     opacity:0;
-    transition: all 1s cubic-bezier(0.23, 1, 0.320, 1);
+    transition: all 0.5s;
+    filter: blur(5px);
+
 }
 *.show{
     opacity:1;
+    filter: blur(0px);
+
+    
+
+}
+
+.prova{
+    opacity: 1;
 }
 /* Fine */
 

@@ -1,36 +1,40 @@
-const sezioni_da_osservare = document.querySelectorAll(".watch")
+const sezioniNascoste = document.querySelectorAll(".watch")
 
-
-
-const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry=>{
-        entry.target.classList.toggle("show", entry.isIntersecting)
+const observerSez = new IntersectionObserver((entries)=>{
+    entries.forEach((entry)=>{
+        entry.target.classList.toggle("show", entry.isIntersecting);
+        //  sezioniNascoste.forEach((el) => observer.observe(el));
     })
-    console.log(entries)
-    },{
-    threshold: 0.6,
+    },
+    {
+        rootMargin: "-20px",
+        threshold: 0.60,
     }
-    )
-    sezioni_da_osservare.forEach(elemento =>{
-        observer.observe(elemento)
+);
+
+sezioniNascoste.forEach((sez) => observerSez.observe(sez));
+
+
+
+
+const bottoniNascosti = document.querySelectorAll(".watchBtn")
+
+const observerBtn = new IntersectionObserver((entries)=>{
+    entries.forEach((entry)=>{
+        entry.target.classList.toggle("showBtn", entry.isIntersecting);
+
     })
-
-
-
-const elementi_da_osservare = document.querySelectorAll(".watch100")
-
-const observer100 = new IntersectionObserver(entries => {
-    entries.forEach(entry=>{
-        entry.target.classList.toggle("show100", entry.isIntersecting)
-    })
-    console.log(entries)
-    },{
-    threshold: 1,
+    },
+    {
+        threshold: 0.99,
     }
-    )
-    elementi_da_osservare.forEach(elemento =>{
-        observer.observe(elemento)
-    })
+);
+
+bottoniNascosti.forEach((sez) => observerBtn.observe(sez));
+
+
+
+
 
 
 
