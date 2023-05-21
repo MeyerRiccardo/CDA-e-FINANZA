@@ -34,76 +34,24 @@ body{
 }
 
 /* animazione per comparsa graduale nome */
-path[data-descr="Meyer1"]{
-    opacity:0;
-    animation:comparsa 1s 1s forwards;
-}
-path[data-descr="Meyer2"]{
-    opacity:0;
-    animation:comparsa 1s 1.5s forwards;
-}
-path[data-descr="Meyer3"]{
-    opacity:0;
-    animation:comparsa 1s 2s forwards;
-}
-path[data-descr="Meyer4"]{
-    opacity:0;
-    animation:comparsa 1s 2.5s forwards;
-}
-path[data-descr="Meyer5"]{
-    opacity:0;
-    animation:comparsa 1s 3s forwards;
-}
-path[data-descr="Riccardo1"]{
-    opacity:0;
-    animation:comparsa 1s 3.5s forwards;
-}
-path[data-descr="Riccardo2"]{
-    opacity:0;
-    animation:comparsa 1s 4s forwards;
-}
-path[data-descr="Riccardo3"]{
-    opacity:0;
-    animation:comparsa 1s 4.5s forwards;
-}
-path[data-descr="Riccardo4"]{
-    opacity:0;
-    animation:comparsa 1s 5s forwards;
-}
-path[data-descr="Riccardo5"]{
-    opacity:0;
-    animation:comparsa 1s 5.5s forwards;
-}
-path[data-descr="Riccardo6"]{
-    opacity:0;
-    animation:comparsa 1s 6s forwards;
-}
-path[data-descr="Riccardo7"]{
-    opacity:0;
-    animation:comparsa 1s 6.5s forwards;
-}
-path[data-descr="Riccardo8"]{
-    opacity:0;
-    animation:comparsa 1s 7s forwards;
-}
 
 /* animazione per argomenti della presentazione (zoom) */
 g[fill="#000000"]{
-    animation: prova 2s 7s forwards;
+    animation: comparsa 2s 7s forwards;
+    animation: videogioco 1s 8s infinite ;
     opacity: 0;
     
 }
 
 
 /* ANIMAZIONI */
-@keyframes prova{
+@keyframes videogioco{
     from{
         opacity: 1;
-        transform: scale(1.5);
+        
     }
     to{
-        transform: scale(1);
-        opacity: 1;
+        opacity: 0;
 
     }
 }
@@ -138,7 +86,7 @@ g[fill="#000000"]{
     transition: width 0.5s;
 }
 
-#bottone-circolare:hover{
+#bottone-circolare:hover, #bottone-circolare:active{
     fill:#F424B9;
     width:125%;
     height: auto;

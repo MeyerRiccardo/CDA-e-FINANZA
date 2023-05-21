@@ -6,10 +6,11 @@
 body,html{
     margin: 0; padding: 0; 
     /* overflow: hidden; */
-    background-color: rgb(255, 240, 240);
+    background-color: rgb(255, 255, 255);
     font-size: var(--fz);
     opacity: 0;
     animation: display 1.5s forwards cubic-bezier(0.075, 0.82, 0.165, 1);
+    scroll-behavior: smooth;
 }
 
 @keyframes display {
@@ -31,6 +32,36 @@ nav{
 
 h1{
     font-size: 3rem;
+    margin: 0;
+}
+
+
+h2{
+    padding-bottom:5%;
+    font-family: var(--subFont);
+    font-size: 2.5rem;
+
+}
+h2::after{
+    content:"";
+    border-bottom: 5px solid #F424B9;
+    width: 18%;
+    margin-top: 9px;
+    display: block;
+
+}
+
+h3{
+    font-size: 1.5rem;
+    width: 100%;
+}
+
+h3::after{
+    content:"";
+    border-bottom: 3px solid blue;
+    width: 6%;
+    margin-top: 9px;
+    display: block;
 }
 
 h5{
@@ -40,11 +71,20 @@ h5{
 
 img{
     height: 100%; width: auto;
+    
 }
 
 a{
     text-decoration: none;
     color: white;
+}
+
+p{
+    font-family: var(--pFont);
+}
+
+b{
+    font-style: italic;
 }
 /* GENERALI */
 
@@ -60,7 +100,7 @@ a{
     flex-flow: row nowrap;
     /* align-items: center; */
     /* border:2px solid black; */
-    width: 650px; height: 70px;
+    width: 700px; height: 70px;
 }
 
 nav a{
@@ -71,11 +111,14 @@ nav a{
 
     line-height: 60px;
 
-    /* z-index: 1; */
     display: inline-block;
     text-align: center;
     /* border:3px solid blue; */
     transition: all 1.5s;
+}
+
+header{
+    height:100vh;
 }
 
 .hero{
@@ -88,15 +131,11 @@ nav a{
     height: 100%; width: 100%;
 }
 
-header{
-    height:100vh;
-}
-
 .hero__content{
     color: white;
     position:fixed;
-    
-    bottom:10%;
+    height: auto;
+    bottom: 10%;
     
     padding-left:20vw;
     padding-right:10vw;
@@ -104,28 +143,62 @@ header{
 
     display: flex;
     justify-content: center;
-    flex-flow: column wrap;
+    flex-flow: row wrap;
+
+}
+.hero__content>*{
+    flex: 1 1 100%;
 }
 
 main{
+    position: relative;
     max-width: 1024px;
     margin: 0 auto;
-    border: 3px solid red;
+    z-index:4;
+    /* border: 3px solid red; */
 }
 
 #MAIN{
-    position: relative;
-    z-index:4;
     background: white;
-
-    width: 100%; height: 100vh;
+    border-top: 0.1px solid black;
+    width: 100%; height: 400vh;
 }
+
+section{
+    position: relative;
+    transition: all 0.25s;
+    padding-top:25%;
+    padding-bottom: calc(var(--BtnFrGrandezza)*1.25);
+    display: flex;
+    flex-flow: row wrap;
+
+    align-items: center;
+    justify-content: center;
+
+}
+section>*{
+    /* border: 1px solid green; */
+    flex: 1 1 100%;
+}
+
+section ul li{
+    list-style-type: disc;
+    padding-left: 3%;
+}
+
+@media (max-width:768px) {
+    section{
+        padding-bottom: calc(var(--BtnFrGrandezza)*1);
+    
+    }
+}
+
 /* LAYOUT */
 
 
 /* UTILITIES */
 nav a:nth-child(1){
-    flex: 1 1 150px;
+    flex: 1 1 200px;
 }
 nav a:nth-child(1):hover{
     flex: 1 1 400px;
@@ -149,18 +222,42 @@ nav a:nth-child(2):hover{
     transform: scale(1.25);
 }
 
-li{
+.hero__content li{
     list-style:none;
     transition: all 0.5s;
-    /* border: 3px solid red; */
-    margin-bottom: 1%;
+    position: relative;
+    padding: 1% 0;
 
 }
 
-li:hover{
-    padding-left: 5%;
+li:hover, li:active, li:focus{
+        padding: 0 5%;
 }
 
+span[data-descr]:hover{
+    cursor:help;
+    position: relative;
+
+}
+span[data-descr]:hover::after, 
+span[data-descr]:active::after{
+    content: attr(data-descr);
+    background: rgb(222, 222, 222);
+    position: absolute;
+    top: calc(var(--fz)*1.5);
+    left:50%;
+    transform: translateX(-50%);
+
+    width:30vw;
+    padding:15px 20px;
+
+    box-shadow: 3px 3px 3px black;
+    font-size: calc(80%);
+    z-index:2;
+    line-height: 1.5em;
+    text-align: justify;
+
+}
 /* UTILITIES */
 
 
@@ -172,7 +269,7 @@ li:hover{
 
 
 
-
+/* Media Query per Menù a comparsa e ridimensionamento font */
 @media (max-width:768px) {
 
     body,html{
@@ -196,18 +293,9 @@ li:hover{
 
     }
 
-
     nav a{
         flex: 1 1 100%;
         height: 60px;
-    }
-
-
-    .hero__content
-    {
-        padding-left:10vw;
-        padding-right:10vw;
-        position: fixed;
     }
 
     .hamburger{
@@ -228,8 +316,6 @@ li:hover{
         display: block;
     }
 
-
-
     #MENU.menu--aperto{
         /* display: none; */
         position: fixed;
@@ -242,7 +328,7 @@ li:hover{
         url(../immagini/hamburger.jpg);
 
         background-repeat: no-repeat;
-        background-size: 100%;
+        background-size: cover;
 
         border: 3px solid pink;
 
@@ -254,6 +340,90 @@ li:hover{
 
     }
 }
+/* Fine */
+
+
+
+
+
+.bottone{
+    width:var(--BtnFrGrandezza);
+    height: var(--BtnFrGrandezza);
+    position: absolute;
+    bottom:0; 
+    /* border: 2px solid black; */
+
+    transition: all 0.25s;
+
+}
+
+#freccia-circolare{
+    width:100%;
+    height:auto;
+    position:absolute;
+    top:50%;left: 50%;
+    transform: translate(-50%,-50%);
+    fill:blue;
+    transition: width 0.5s;
+}
+
+#freccia-circolare:hover {
+    fill:#F424B9;
+    width:125%;
+    height: auto;
+    filter:drop-shadow(3px 3px 3px black)
+}
+#freccia-circolare:hover path[fill="blue"] {
+    fill:#F424B9;
+    width:125%;
+    height: auto;
+    filter:drop-shadow(3px 3px 3px black)
+}
+
+.watch100{
+    opacity: 0;
+
+    transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.show100{
+    /* Da vedere per comparsa dall'alto / basso (translate non funziona) */
+
+    opacity: 1;
+}
+
+
+
+
+/* Media query per ridimensionamento bottone e layout testo */
+@media (max-width:768px) {
+    .bottone{
+        width:var(--BtnGrandezza);
+        height: var(--BtnGrandezza);
+        position: absolute;
+        /* border: 2px solid black; */
+        bottom: 0%;
+        left:50%;
+    
+        transform: translateX(-50%);
+        opacity: 0;
+        transition: all 0.25s;
+    
+    }
+
+    main{
+        padding: 0 10% 0 5%;
+        text-align: justify;
+    }
+}
+/* Media Query (prob. unica) per tablet (Ridimensionamento ed allineamento*/
+@media (min-width:768px) and (max-width:1024px){
+    main{
+        max-width: 700px;
+        text-align: justify;
+    }
+}
+/* Fine */
 
 
 
@@ -262,13 +432,13 @@ li:hover{
 
 
 
-
-
-
-
-
-
-
-
-
+/* Gestione Fade-in */
+*.watch{
+    opacity:0;
+    transition: all 1s cubic-bezier(0.23, 1, 0.320, 1);
+}
+*.show{
+    opacity:1;
+}
+/* Fine */
 
