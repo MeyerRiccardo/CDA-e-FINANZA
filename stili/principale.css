@@ -347,7 +347,7 @@ span[data-descr]:active::after{
 
 
 .bottone{
-    width:var(--BtnFrGrandezza);
+    width: var(--BtnFrGrandezza);
     height: var(--BtnFrGrandezza);
     position: absolute;
     bottom:0; 
@@ -382,13 +382,15 @@ span[data-descr]:active::after{
 
 .watchBtn{
     opacity: 0;
-    transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition: all 1.5s;
+    transform: scale(2);
 
 }
 
 .showBtn{
     /* Da vedere per comparsa dall'alto / basso (translate non funziona) */
     opacity: 1;
+    transform: scale(1);
 
 }
 
@@ -402,7 +404,6 @@ span[data-descr]:active::after{
         bottom: 0%;
 
         transition: all 0.25s;
-    
     }
 
     main{
@@ -427,22 +428,20 @@ span[data-descr]:active::after{
 
 
 /* Gestione Fade-in */
-*.watch{
-    opacity:0;
-    transition: all 0.5s;
-    filter: blur(5px);
-
-}
-*.show{
-    opacity:1;
-    filter: blur(0px);
-
+@media (min-width:1024px) {
+    *.fade-in{
+        opacity:0;
+        transition: all 0.5s;
+        filter: blur(5px);
     
-
+    }
+    *.in-page{
+        opacity:1;
+        filter: blur(0px);
+    
+    }
 }
 
-.prova{
-    opacity: 1;
-}
+
 /* Fine */
 

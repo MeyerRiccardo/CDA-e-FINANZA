@@ -1,14 +1,14 @@
-const sezioniNascoste = document.querySelectorAll(".watch")
+const sezioniNascoste = document.querySelectorAll(".fade-in")
 
 const observerSez = new IntersectionObserver((entries)=>{
     entries.forEach((entry)=>{
-        entry.target.classList.toggle("show", entry.isIntersecting);
+        entry.target.classList.toggle("in-page", entry.isIntersecting);
         //  sezioniNascoste.forEach((el) => observer.observe(el));
     })
     },
     {
         rootMargin: "-20px",
-        threshold: 0.60,
+        threshold: 0.80,
     }
 );
 
@@ -26,11 +26,12 @@ const observerBtn = new IntersectionObserver((entries)=>{
     })
     },
     {
-        threshold: 0.99,
+        // rootMargin: "-50px",
+        threshold: 1,
     }
 );
 
-bottoniNascosti.forEach((sez) => observerBtn.observe(sez));
+bottoniNascosti.forEach((Btn) => observerBtn.observe(Btn));
 
 
 
