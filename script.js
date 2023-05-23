@@ -36,6 +36,25 @@ bottoniNascosti.forEach((Btn) => observerBtn.observe(Btn));
 
 
 
+const elementiNascosti = document.querySelectorAll(".watch")
+
+const observerEl = new IntersectionObserver((entries)=>{
+    entries.forEach((entry)=>{
+        entry.target.classList.toggle("showed", entry.isIntersecting);
+
+    })
+    },
+    {
+        // rootMargin: "-25px",
+        threshold: 0.60,
+    }
+);
+
+elementiNascosti.forEach((El) => observerEl.observe(El));
+
+
+
+
 
 
 
