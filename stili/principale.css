@@ -471,6 +471,8 @@ span[data-descr]:active::after{
         align-items: center;
         text-align: center;
     }
+
+    
 }
 /* Fine */
 
@@ -479,20 +481,23 @@ span[data-descr]:active::after{
 /* Gestione Fade-in */
 @media (min-width:1024px) {
     *.fade-in{
-        opacity:0;
-        transition: all 0.5s;
-        filter: blur(5px);
-    
+
+        opacity: 0;
+        transition: all 1s;
+        /* margin-right: 200vw; */
+        filter: blur(3px);
+        
+
     }
     *.in-page{
-        opacity:1;
+        opacity: 1;
         filter: blur(0px);
-    
+        /* margin-right: 0vw; */
+
+
     }
-    .cerchio .fade-in.in-page{
-        transition-delay: 2s;
-    
-    }
+
+
 }
 
 
@@ -520,4 +525,14 @@ span[data-descr]:active::after{
 
 }
 /* Fine */
+
+
+/* helpers */
+.tac{
+    text-align: center;
+}
+.pink{
+    color: var(--pink);
+}
+
 
