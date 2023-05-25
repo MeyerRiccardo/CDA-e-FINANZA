@@ -517,12 +517,13 @@ span[data-descr]:active::after{
 .watch{
     transform:scale(0);
     transition:all 1s;
+    visibility: hidden;
 }
 
 .showed{
     transform: scale(1);
     /* transform: rotate(360deg); */
-
+    visibility: visible;
 }
 /* Fine */
 

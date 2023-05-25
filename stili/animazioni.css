@@ -6,10 +6,11 @@
     stroke-dasharray: var(--DAO1);
     Stroke-dashoffset: var(--DAO1);
     stroke-linecap: round;
-    animation: grafico-cerchio1 4s 2s forwards cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    animation: grafico-cerchio1 4s 2s infinite cubic-bezier(0.455, 0.03, 0.515, 0.955);
     fill: transparent;
 
 }
+
 .contenitore-flex .cerchio:nth-child(2) circle{
     /* opacity: 0; */
     /* filter: blur(6px); */
@@ -18,7 +19,7 @@
     stroke-dasharray: var(--DAO1);
     Stroke-dashoffset: var(--DAO1);
     stroke-linecap: round;
-    animation: grafico-cerchio2 4s 2s forwards cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    animation: grafico-cerchio2 4s 2s infinite cubic-bezier(0.455, 0.03, 0.515, 0.955);
     fill: transparent;
 }
 .contenitore-flex .cerchio:nth-child(3) circle{
@@ -29,27 +30,42 @@
     stroke-dasharray: var(--DAO1);
     Stroke-dashoffset: var(--DAO1);
     stroke-linecap: round;
-    animation: grafico-cerchio3 4s 2s forwards cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    animation: grafico-cerchio3 4s 2s infinite cubic-bezier(0.455, 0.03, 0.515, 0.955);
     fill: transparent;
 }
 
 
 @keyframes grafico-cerchio1{
-    100%{
+    
+    0%,5%{
+        stroke-dasharray: var(--DAO1);
+        Stroke-dashoffset: var(--DAO1);
+    }
+    45%,100%{
         filter: blur(0);
         /* opacity: 1; */
         stroke-dashoffset: var(--DAOCerchio1);
     }
+
 }
+
 @keyframes grafico-cerchio2{
-    100%{
+    0%,5%{
+        stroke-dasharray: var(--DAO1);
+        Stroke-dashoffset: var(--DAO1);
+    }
+    45%,100%{
         filter: blur(0);
         /* opacity: 1; */
         stroke-dashoffset: var(--DAOCerchio2);
     }
 }
 @keyframes grafico-cerchio3{
-    100%{
+    0%,5%{
+        stroke-dasharray: var(--DAO1);
+        Stroke-dashoffset: var(--DAO1);
+    }
+    45%,100%{
         filter: blur(0);
         /* opacity: 1; */
         stroke-dashoffset: var(--DAOCerchio3);
