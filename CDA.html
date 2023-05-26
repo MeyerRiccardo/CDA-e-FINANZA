@@ -410,7 +410,65 @@
 
       <section id="Sezione-5">
         <h2 class="fade-in">ULTIME NOTIZIE</h2>
- 
+        
+
+
+
+          <div class="contenitore">
+            <div class="contenitore-slider">
+              <div class="slider">
+                <div class="slider__content slide-1"><h2>URSULA VON DER LEYEN</h2><p>«Il soffitto di vetro che impediva alle donne di accedere alle posizioni di vertice delle aziende è stato infranto. È un momento davvero storico e commovente»</p>
+                  <p><a href="">ECCO PERCHÈ</a></p>
+                </div>
+
+                 <img id="slide-1" src="immagini/trasparente.png">
+
+                 <div class="slider__content slide-2 mostra"><h2>2</h2><p>«Il soffitto di vetro che impediva alle donne di accedere alle posizioni di vertice delle aziende è stato infranto. È un momento davvero storico e commovente»</p>
+                  <p><a href="">ECCO PERCHÈ</a></p>
+                </div>
+                 <img src="immagini/trasparente.png" id="slide-2">
+
+                 <div class="slider__content slide-3 mostra"><h2>3</h2><p>«Il soffitto di vetro che impediva alle donne di accedere alle posizioni di vertice delle aziende è stato infranto. È un momento davvero storico e commovente»</p>
+                  <p><a href="">ECCO PERCHÈ</a></p>
+                </div>
+                 <img src="immagini/trasparente.png" id="slide-3">
+              
+                 
+              <div class="slider-nav">
+                <a href="#slide-1" id="slider-nav-1"></a>
+                <a href="#slide-2" id="slider-nav-2"></a>
+                <a href="#slide-3" id="slider-nav-3"></a>
+              </div>
+            </div>
+          </div>
+          
+          <script>
+            $(document).ready(function () {
+              $("#slider-nav-1").on("click", function () {
+                $('.slide-1').removeClass("mostra");
+                $(".slide-2").addClass("mostra");
+                $(".slide-3").addClass("mostra");
+              });
+            });
+            $(document).ready(function () {
+              $("#slider-nav-2").on("click", function () {
+                $('.slide-1').addClass("mostra");
+                $(".slide-2").removeClass("mostra");
+                $(".slide-3").addClass("mostra");
+              });
+            });
+            $(document).ready(function () {
+              $("#slider-nav-3").on("click", function () {
+                $('.slide-1').addClass("mostra");
+                $(".slide-2").addClass("mostra");
+                $(".slide-3").removeClass("mostra");
+              });
+            });
+          </script>
+      
+
+        
+        <br><br><br><br><br><br><br><br><br><br>
         
       <div class="bottone watchBtn">
         <a href="#TOP">
