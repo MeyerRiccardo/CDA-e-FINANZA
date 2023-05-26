@@ -340,7 +340,7 @@ span[data-descr]:active::after{
 @media (max-width:768px) {
 
     body,html{
-        font-size: calc(var(--fz)*0.60);
+        font-size: calc(var(--fz)*0.69);
     }
 
     h2{
@@ -485,11 +485,12 @@ span[data-descr]:active::after{
 
 }
 .slider__content{
-    position: absolute;
+    position: sticky;
     bottom: 25%; left: 10%;
     width: 80%;
     transform: translateY(25%);
     color: white;
+    
 }
 .slider__content h2{
     margin: 0; padding: 0;
@@ -500,7 +501,7 @@ span[data-descr]:active::after{
     display: flex;
     aspect-ratio: 16/9;
     overflow-x: auto;
-    scroll-snap-type: x mandatory;
+    scroll-snap-type: mandatory;
     scroll-behavior: smooth;
 	-ms-overflow-style: none;
 	scrollbar-width: none;
@@ -510,12 +511,23 @@ span[data-descr]:active::after{
 .slider::-webkit-scrollbar {
     display: none;
 }
-.slider img{
+.slider figure{
     flex: 1 0 100%;
     scroll-snap-align: start;
-    object-fit: cover;
+    position: relative;
+    overflow-y: hidden;
+    margin: 0;padding: 0;
 
 }
+figcaption{
+    margin: 0; padding: 0;
+    object-fit: cover;
+    overflow-y: HIDDEN;
+}
+/* .slider figure img{
+    width: 100%;
+    aspect-ratio: 16/9;
+} */
 .slider-nav{
     display: flex;
     column-gap: 25px;
@@ -542,6 +554,8 @@ span[data-descr]:active::after{
 #slide-1{
     background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(0,0,0,0.6963410364145659) 71%, rgba(0,0,0,0.49746148459383754) 100%, rgba(255,255,255,0) 100%), url(../immagini/VDL.png);
     background-size: cover;
+
+
 }
 #slide-2{
     background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(0,0,0,0.6963410364145659) 71%, rgba(0,0,0,0.49746148459383754) 100%, rgba(255,255,255,0) 100%), url(../immagini/QM.png);
@@ -561,10 +575,10 @@ span[data-descr]:active::after{
 
 @media (max-width:768px) {
     .contenitore-slider p{
-        font-size: 0.9rem;
+        font-size: 0.69rem;
     }
     .contenitore-slider h2{
-        font-size: 1.5rem;
+        font-size: 1.25rem;
     }
 
     .slider-nav a{
