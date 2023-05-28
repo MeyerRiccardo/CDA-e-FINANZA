@@ -90,6 +90,8 @@ caption{
 iframe{
     border: 3px solid var(--pink);
     box-shadow: 6px 6px 6px black;
+    max-width: 100%;
+    aspect-ratio: 16/9;
 }
 
 a{
@@ -475,6 +477,13 @@ span[data-descr]:active::after{
         z-index: 3;
 
     }
+    .selected::after{
+        display: none;
+    }
+    .selected{
+        text-decoration: underline;
+    }
+
 }
 /* Fine */
 
