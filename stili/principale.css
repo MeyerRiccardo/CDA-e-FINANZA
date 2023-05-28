@@ -92,7 +92,12 @@ p{
 b{
     font-style: italic;
 }
+
 /* GENERALI */
+blockquote{
+    font-family: var(--handFont);
+    font-size: 1.5rem;
+}
 
 
 
@@ -158,9 +163,10 @@ header{
 
 main{
     position: relative;
-    max-width: 1024px;
     margin: 0 auto;
-    z-index:4;
+    max-width: 1024px;
+
+    z-index:5;
     /* border: 3px solid red; */
 }
 
@@ -172,8 +178,8 @@ main{
 section{
     position: relative;
     max-width: 100%;
-    padding-top:25%;
-    padding-bottom: calc(var(--BtnFrGrandezza)*1.25);
+
+    margin-bottom:50%; padding-bottom: calc(var(--BtnFrGrandezza)*1.25);
 
     display: flex;
     flex-flow: row wrap;
@@ -221,7 +227,7 @@ section ul li{
 .contenitore-flex{
     display: flex;
     position: relative;
-    flex-flow: row nowrap;
+    flex-flow: row wrap;
     justify-content: space-evenly; align-items: center;
     /* height: 60vh;  */
 
@@ -475,6 +481,7 @@ span[data-descr]:active::after{
 /* Fine */
 
 
+/* SlideShow */
 .contenitore{
     max-width: 100%;
 }
@@ -501,7 +508,7 @@ span[data-descr]:active::after{
     display: flex;
     aspect-ratio: 16/9;
     overflow-x: auto;
-    scroll-snap-type: mandatory;
+    scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
 	-ms-overflow-style: none;
 	scrollbar-width: none;
@@ -519,15 +526,12 @@ span[data-descr]:active::after{
     margin: 0;padding: 0;
 
 }
+
 figcaption{
     margin: 0; padding: 0;
     object-fit: cover;
-    overflow-y: HIDDEN;
 }
-/* .slider figure img{
-    width: 100%;
-    aspect-ratio: 16/9;
-} */
+
 .slider-nav{
     display: flex;
     column-gap: 25px;
@@ -554,25 +558,30 @@ figcaption{
 #slide-1{
     background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(0,0,0,0.6963410364145659) 71%, rgba(0,0,0,0.49746148459383754) 100%, rgba(255,255,255,0) 100%), url(../immagini/VDL.png);
     background-size: cover;
-
-
+    cursor: pointer;
 }
 #slide-2{
     background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(0,0,0,0.6963410364145659) 71%, rgba(0,0,0,0.49746148459383754) 100%, rgba(255,255,255,0) 100%), url(../immagini/QM.png);
     background-size: cover;
+    cursor: pointer;
 }
 #slide-3{
     background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(0,0,0,0.6963410364145659) 71%, rgba(0,0,0,0.49746148459383754) 100%, rgba(255,255,255,0) 100%), url(../immagini/Graphs.png);
     background-size: cover;
+    cursor: pointer;
 }
 
 .nascondi{
     display: none;
+
 }
+/* fine */
 
 
 
 
+
+/* Ridimensionamento per slideshow */
 @media (max-width:768px) {
     .contenitore-slider p{
         font-size: 0.69rem;
@@ -588,22 +597,107 @@ figcaption{
         box-shadow: 2.5px 2.5px 2.5px blue;
     }
 }
+/* Fine */
 
 
 
 
 
+.absolute{
+    position: absolute;
+
+    /* animation: prova 2s 0.5s forwards; */
+}
 
 
 
+@keyframes prova {
+    0%{
+        transform:scale(1);
+    }
+    50%{
+        transform: scale(2);}
+    100%{
+        transform: scale(1);
+    }
+}
+
+
+.articolo{
+    border-radius: 0;
+    box-shadow: none;
+
+    animation: prova 2s 0s forwards;
+}
 
 
 
+.bottone__articolo{
+    width:68px;
+    position: fixed;
+    bottom: 10%;
+    right: 5%;
+}
+
+#bottone-circolare{
+    width:100%;
+    height:auto;
+    position:absolute;
+    top:50%;left: 50%;
+    transform: translate(-50%,-50%);
+    fill:blue;
+    transition: width 0.5s;
+}
+
+#bottone-circolare:hover, #bottone-circolare:active{
+    fill:#F424B9;
+    width:125%;
+    height: auto;
+    filter:drop-shadow(3px 3px 3px black)
+}
+
+#testo-circolare{
+    width:50%; height:auto;
+    position:absolute;
+    top:50%;left: 50%;
+    transform: translate(-50%,-50%);
+    z-index:-1;
+    transition: width 0.5s;
+}
+
+#bottone-circolare:hover + #testo-circolare{
+    width:200%;
+    height: auto;
+    /* filter:drop-shadow(3px 3px 3px black); */
+    /* animation: rotazione 3s infinite; */
+}
 
 
 
+@media (max-width: 768px) {
+    .bottone__articolo{
+        width:51px;
+        position: fixed;
+        bottom: 10%;
+        right: 5%;
+    }
 
+    #testo-circolare{
+        width:200%;
+        height: auto;
+    }
 
+    #bottone-circolare{
+        width:100%;
+        height:auto;
+    }
+    #bottone-circolare:hover, #bottone-circolare:active{
+        width:100%;
+        height: auto;
+    }
+    
+
+}
 
 
 
@@ -619,17 +713,14 @@ figcaption{
         /* margin-right: 200vw; */
         filter: blur(3px);
         
-
     }
+
     *.in-page{
         opacity: 1;
         filter: blur(0px);
         /* margin-right: 0vw; */
 
-
     }
-
-
 }
 
 
@@ -666,6 +757,9 @@ figcaption{
 }
 .pink{
     color: var(--pink);
+}
+.bt{
+    color: black;
 }
 
 

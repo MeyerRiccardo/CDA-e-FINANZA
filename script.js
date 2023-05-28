@@ -27,7 +27,7 @@ const observerBtn = new IntersectionObserver((entries)=>{
     },
     {
         // rootMargin: "-50px",
-        threshold: 1,
+        threshold: [0,1],
     }
 );
 
@@ -51,6 +51,12 @@ const observerEl = new IntersectionObserver((entries)=>{
 );
 
 elementiNascosti.forEach((El) => observerEl.observe(El));
+
+
+
+
+
+
 
 
 
