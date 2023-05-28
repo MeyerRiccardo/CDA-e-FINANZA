@@ -17,11 +17,22 @@
 
     <nav id="MENU">
       <div class="menu">
-        <a href="CDA.html"><h5>C.D.A.</h5></a>
+        <a href="CDA.html" class="selected"><h5>C.D.A.</h5></a>
         <a href="index.html"><img src="immagini/Home.png" alt="" /></a>
         <a href="Finanza.html"><h5>FINANZA</h5></a>
       </div>
     </nav>
+
+    <script>
+      // Script per mostrare solo la slide cliccata, altrimenti si sovrappongono
+      $(document).ready(function () {
+        $(".menu-link").on("click", function () {
+          $(".menu-link").toggleClass("selected")
+
+
+        });
+      });
+    </script>
 
     <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
     <!-- JQuery -->
@@ -35,7 +46,7 @@
     </script>
 
     <header id="TOP">
-      <div class="hero">
+      <div class="hero" id="hero-CDA">
         <div class="hero__content">
           <h1>LE DONNE E LA REALTÀ DEI CDA</h1>
           <ul>
@@ -415,7 +426,9 @@
               <div class="slider">
 
                 <figure>
+                  <a href="#Sezione-5">
                   <img id="slide-1" src="immagini/trasparente.png">
+                  </a>
                   <figcaption class="slider__content slide-1">
                     <h2>URSULA VON DER LEYEN</h2>
                     <p>
@@ -431,7 +444,9 @@
 
 
                 <figure>
+                  <a href="#Sezione-5">
                   <img id="slide-2" src="immagini/trasparente.png">
+                  </a>
                   <figcaption class="slider__content slide-2">
                     <h2>I NUMERI</h2>
                     <p>
@@ -443,7 +458,9 @@
               
 
                 <figure>
+                  <a href="#Sezione-5">
                   <img id="slide-3" src="immagini/trasparente.png">
+                  </a>
                   <figcaption class="slider__content slide-3">
                     <h2>I NUMERI</h2>
                     <p>
@@ -452,13 +469,29 @@
                     </p>
 
                   </figcaption>
-                  </figure>
+                </figure>
+
+
+                <figure>
+                  <a href="#Sezione-5">
+                  <img id="slide-4" src="immagini/Sheryl.png">
+                  </a>
+                  <figcaption class="slider__content slide-4">
+                    <h2>SHERYL SANDBERG</h2>
+                    <p>
+                    Perchè abbiamo così poche al vertice? <br><br>
+                    <mark>&nbsp;VIDEO INTERVISTA&nbsp;</mark>
+                    </p>
+
+                  </figcaption>
+                </figure>
 
 
               <div class="slider-nav">
                 <a href="#slide-1" id="slider-nav-1"></a>
                 <a href="#slide-2" id="slider-nav-2"></a>
                 <a href="#slide-3" id="slider-nav-3"></a>
+                <a href="#slide-4" id="slider-nav-4"></a>
               </div>
 
               </div>
@@ -506,59 +539,469 @@
                   - ha commentato su <b>Twitter</b> la presidente dell’esecutivo UE <mark>Ursula von der Leyen</mark>.
                 </p>
 
-                <div class="bottone__articolo">
-        
-                  <svg id="bottone-circolare" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="50" cy="50" r="50" />
-                  </svg>
+              <div class="bottone__articolo">
+                <svg class="bottone-circolare" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="50" cy="50" r="50" />
+                </svg>
                   
-          
-                  <svg id="testo-circolare" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="0" cy="0" r="0" />
-                    <defs>
-                      <path id="textPath" d="M15 50 C20 0 90 0 90 80"/>
-                    </defs>
-                    <text fill="black">
-                      <textPath xlink:href="#textPath">FONTI</textPath>
-                    </text>
-                  </svg>
-                </div>
+                <svg class="testo-circolare" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="0" cy="0" r="0" />
+                  <defs>
+                    <path id="textPath1" d="M15 50 C20 0 90 0 90 80"/>
+                  </defs>
+                  <text fill="black">
+                    <textPath xlink:href="#textPath1">FONTI</textPath>
+                  </text>
+                </svg>
+              </div>
 
-                <div id="slide-1__fonti">
-                  <br><br><br>
-                  <ul>
-                    <a href="https://www.ilsole24ore.com/art/parita-donne-cda-aziende-via-libera-direttiva-ue-AE4LZCJC" class="bt">
-                      <li><b>IL SOLE 24ORE</b></li>
-                    </a>
-                    <a href="https://www.consilium.europa.eu/it/policies/gender-balance-corporate-boards/#figures" class="bt">
-                      <li><b>CONSILIUM EUROPA</b></li>
-                    </a>
-                  </ul>
-                </div>
+              <div id="slide-1__fonti" class="nascondi">
+                <br><br><br><br><br><br>
+                <ul>
+                    <li>
+                      <a href="https://www.ilsole24ore.com/art/parita-donne-cda-aziende-via-libera-direttiva-ue-AE4LZCJC" class="bt"><b>IL SOLE 24ORE</b></a>
+                    </li>
+                    <li>
+                      <a href="https://www.consilium.europa.eu/it/press/press-releases/2016/06/16/epsco-conclusions-gender-equality/" class="bt"><b>CONSILIUM EUROPA</b></a>
+                    </li>
+
+                </ul>
+              </div>
 
           </div>
+
+
+          <div class="slide-2__content nascondi">
+            <h3>L'ANALISI</h3>
+            <p>Il database analitico dell'<span data-descr="L'Organizzazione per la cooperazione e lo sviluppo economico (OCSE) è un'organizzazione internazionale di studi economici per i Paesi membri, Paesi sviluppati aventi in comune un'economia di mercato.
+            La missione dell’OCSE, all’interno del vasto panorama degli organismi internazionali, è la promozione, a livello globale, di politiche che migliorino il benessere economico e sociale dei cittadini, attraverso l’integrazione dei mercati e la realizzazione dei più alti livelli di crescita economica e di occupazione sostenibile"><b>OCSE</b></span> 
+            sulle singole multinazionali e le loro affiliate (<span data-descr="Le imprese multinazionali sono state in prima linea nei cambiamenti dell'economia globale negli ultimi decenni. Tuttavia, sono sorprendentemente poche le statistiche ufficiali attualmente disponibili sulle singole multinazionali.
+            Per colmare questa lacuna, l'OCSE ha iniziato a sviluppare un nuovo database - l'Analytical Database on Individual Multinationals and Affiliates (ADIMA) - utilizzando una serie di fonti aperte di 'big data' che possono fornire nuove informazioni sulle singole multinazionali e sui loro profili globali.
+            L'ADIMA è formato da un registro fisico, un registro digitale, degli indicatori ed un monitoraggio. Queste informazioni coprono già 100 delle più grandi multinazionali del mondo e altre saranno aggiunte nelle prossime versioni."><b>ADIMA</b></span>) 
+            mostra che le donne sono sottorappresentate nei consigli di amministrazione di tutti i settori e che, sebbene vi siano segnali di miglioramento, il <mark>soffitto di vetro</mark> continua a esistere anche all'interno della gerarchia dei consigli di amministrazione.</p>
+            <br><br>
+
+            <p>
+              <details>
+                <summary>
+                  Le donne sono <b>sottorappresentate</b> nei consigli di amministrazione di tutti i settori industriali
+                </summary>
+
+                <table>
+                  <caption>Le donne rappresentano solo il 16% dei membri dei consigli di amministrazione delle prime 500 multinazionali (per capitale di mercato).
+                  </caption>
+                  <tbody>
+                    <tr><td><img src="immagini/CDAS2I1.png" alt=""></td></tr>
+                  </tbody>
+                </table>
+                <br>
+                <p>Le quote arrivano al <b>12%</b> nel <b>settore tecnologico</b>. Anche nel settore più performante, quello dei <b>beni di consumo non ciclici</b> (aziende che producono beni di prima necessità per la casa), le donne rappresentano meno di <b>un quinto</b> del consiglio di amministrazione.</p>
+                <p>In effetti, se si considerano le grandi multinazionali nel loro complesso, solo <b>1</b> su <b>20</b> delle prime 500 ha una rappresentanza femminile superiore al <b>30%</b>.</p>
+                <p>I divari sono presenti in <b>tutti</b> i Paesi, sebbene siano minori - ma comunque significativamente elevati - nei Paesi che hanno introdotto <b>politiche specifiche</b>.</p>
+              </details>
+            </p>
+
+            <br><br>
+
+            <p>
+              <details>
+                <summary>
+                  Ci sono segnali di  <b>miglioramento</b>
+                </summary>
+
+                <table>
+                  <caption>Anche le coorti più giovani di donne nei consigli di amministrazione sono sottorappresentate, ma la loro quota è 4 volte superiore a quella della coorte 1940-49.
+                  </caption>
+                  <tbody>
+                    <tr><td><img src="immagini/CDAS2I2.png" alt=""></td></tr>
+                  </tbody>
+                </table>
+                <br>
+                <p>Sorprendentemente, tuttavia, i dati <b>non</b> suggeriscono che quanto più giovane è l'impresa, tanto minore è la discrepanza di genere, come ci si sarebbe potuto aspettare</p>
+              </details>
+            </p>
+
+            <br><br>
+
+            <p>
+              <details>
+                <summary>
+                  Anche tra i <b>membri</b> dei consigli di amministrazione c'è un soffitto di vetro
+                </summary>
+
+                <table>
+                  <caption>Mentre la percentuale di donne che ricoprono un ruolo consultivo indipendente è del 23%, la loro quota nei ruoli di senior leadership è solo del 7%. 
+                  </caption>
+                  <tbody>
+                    <tr><td><img src="immagini/CDAS2I3.png" alt=""></td></tr>
+                  </tbody>
+                </table>
+                <br>
+                <p>Anche se in parte è una funzione dei <b>fattori generazionali</b> descritti in precedenza, il divario nella partecipazione femminile diventa più netto se si considera l'<b>anzianità</b> dei membri del consiglio di amministrazione</p>
+              </details>
+            </p>
+            
+            <br><br>
+
+            <p>
+              <details>
+                <summary>
+                  Il <b>resoconto</b> del Consiglio dell'UE
+                </summary>
+
+                <table>
+                  <tbody>
+                    <tr><td><img src="immagini/Panoramica.png" alt=""></td></tr>
+                  </tbody>
+                </table>
+                <br>
+              </details>
+            </p>
+            
+            <div class="bottone__articolo">
+        
+              <svg class="bottone-circolare" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="50" cy="50" r="50" />
+              </svg>
+              
+      
+              <svg class="testo-circolare" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="0" cy="0" r="0" />
+                <defs>
+                  <path id="textPath2" d="M15 50 C20 0 90 0 90 80"/>
+                </defs>
+                <text fill="black">
+                  <textPath xlink:href="#textPath2">FONTI</textPath>
+                </text>
+              </svg>
+            </div>
+
+            <div id="slide-2__fonti" class="nascondi">
+              <br><br><br><br><br><br>
+
+              <ul>
+                  <li>
+                    <a href="https://www.oecd.org/gender/data/what-big-data-can-tell-us-about-women-on-boards.htm" class="bt"><b>OECB</b></a>
+                  </li>
+                  <li>
+                    <a href="https://www.consilium.europa.eu/it/policies/gender-balance-corporate-boards/#figures" class="bt"><b>CONSILIUM EUROPA</b></a>
+                  </li>
+              </ul>
+            </div>
+
+          </div>
+
+
+          <div class="slide-3__content nascondi">
+            <h3>I PARAMETRI</h3>
+            <p>
+              Le analisi globali, regionali e per Paese si basano su 
+              un set di dati che copre <b>10.493</b> società in <b>51</b> Paesi - più di <b>176.340</b> incarichi di amministratore - in <b>Asia</b>, <b>Americhe</b> ed <span data-descr="EMEA è l'acronimo dell'inglese Europe, Middle East, and Africa ed è una designazione geografica usata soprattutto in campo economico-industriale."><b></b>EMEA</span>. 
+              <br>Nell'analisi sono stati presi in considerazione solo gli incarichi di <b>amministratore attivo</b> e i membri dei <b>comitati</b>. Per integrare questi dati, <mark>Deloitte</mark> ha compilato informazioni sulle quote di diversità e su altre iniziative di diversità. In totale, la pubblicazione analizza gli sforzi compiuti in <b>72</b> Paesi per promuovere la diversità di genere nei consigli di amministrazione. 
+              <br>
+              Le analisi globali, regionali e nazionali potrebbero non includere i dati per tutte le statistiche e/o per tutti gli anni a causa della <b>disponibilità</b> dei dati.
+            </p><br><br>
+
+            <h3>PROGRESSI A "PASSO DI LUMACA"</h3>
+            <p>
+              La <b>settima edizione</b> del rapporto del Deloitte <mark>Global Boardroom 
+              Women in the Boardroom</mark> mostra i progressi compiuti verso l'aumento del numero di donne nei consigli di amministrazione delle società. 
+              Si tratta di un <b>progresso lento</b>.<br>
+              <b>Se</b> questo ritmo di cambiamento dovesse continuare ogni due anni, potremmo aspettarci di 
+              raggiungere un livello prossimo alla parità nel <b>2045</b>.       
+            </p>
+            <p>
+              In realtà c'è stata una leggera accelerazione nel ritmo del cambiamento. L'ultimo rapporto indicava che la parità sarebbe stata raggiunta nel <b>2052</b>, il che significa che il calendario è stato ridotto di quasi un decennio. 
+            </p><br><br>
+
+            <h3>DONNE ANCORA ESCLUSE DAI VERTICI</h3>
+            <p>
+              La presenza di un maggior numero di donne non significa che le donne raggiungano le <mark>posizioni di vertice</mark>. 
+              Nonostante la percentuale di donne nei consigli di amministrazione si sia avvicinata al <b>20%</b>, ci sono 
+              presidenti di consiglio sono relativamente poche (<b>6,7%</b>, rispetto al <b>5,3%</b> dell'edizione precedente). 
+              <br>
+              Le donne <b>CEO</b> sono ancora più rare, con il <b>5%</b> nel <b>2021</b> e il <b>4,4%</b> nell'edizione precedente.
+            </p>
+            <p>
+              I consigli di amministrazione più diversificati ancora
+              tendono a trovarsi in aziende guidate da <b>donne</b> a livello esecutivo o a livello di consiglio di amministrazione. 
+              Ad esempio, le aziende con donne CEO hanno, in media, consigli di amministrazione significativamente più equilibrati rispetto a quelli guidati da uomini: <b>33,5%</b> di donne contro <b>19,4%</b>. 
+            </p><br></br>
+
+            <h3>"SEMPRE LE STESSE"</h3>
+            <p>
+              Una <b>critica frequente</b> alle <mark>quote</mark> è che sia spesso una piccola coorte di donne uguali, che si ritrova a occupare un gran numero di posti nei consigli di amministrazione. Nel 
+              2014, <b>Deloitte Global</b> ha introdotto una metrica, conosciuta come 
+              <b>fattore stretch</b>, per testare la validità di questa affermazione, misurando quanti 
+              di posti nei consigli di amministrazione che un individuo detiene in un determinato mercato. <br>
+              Quanto più alto è lo stretch factor, tanto maggiore è il numero di posti occupati da un singolo amministratore. 
+              <br> A livello globale, il fattore di flessibilità per le donne è 
+              è leggermente aumentato, passando da <b>1,26</b> nel <b>2018</b> a <b>1,30</b> nel <b>2021</b>.
+              <br>
+              Questa critica alle quote sembra non reggere. 
+              <br>
+              I Paesi con fattori stretch elevati per le donne, come ad esempio 
+              <b>Australia</b> (<b>1,43</b>), <b>Stati Uniti</b> (<b>1,34</b>) e <b>Nuova Zelanda</b> (<b>1,33</b>) - hanno evitato le quote, a favore di <b>approcci volontari</b>. 
+            </p><br><br>
+
+            <h3>LA PERMANENZA MEDIA</h3>
+            <p>
+              Negli ultimi anni c'è stato un calo della <mark>permanenza media</mark> delle donne nei consigli di amministrazione, in particolare rispetto a quella degli uomini. <br>
+              La permanenza media delle donne nei consigli di amministrazione da <b>5,5</b> anni del precedente report a <b>5,1</b> oggi, rispetto alla media della permanenza nei consigli di amministrazione a livello globale per gli uomini, che si è attestata a <b>7,6</b> anni (<b>8,0</b> anni nell'edizione precedente). <br>
+              Ciò potrebbe essere correlato con l'<b>elevato nuovo numero</b> di donne che entrano a far parte di CDA, con la conseguenza di avere meno tempo per accumulare esperienza.
+            </p>
+            <p>
+              <b>D'altro canto</b>, però, si assiste anche a un calo della permanenza nei consigli di amministrazione in alcuni Paesi, dove il numero di donne che entrano nei consigli di amministrazione ha subito poche variazioni dall'ultima edizione. 
+              Ad esempio, in <b>Norvegia</b> si registra un calo della permanenza nei consigli di amministrazione di <b>0,5</b> anni, sebbene il numero complessivo di donne nei consigli di amministrazione sia aumentato solo dell'<b>1,4%</b>. In <b>Israele</b>, la diminuzione della permanenza nei consigli di amministrazione è stata di <b>1,6</b> anni, mentre il numero di donne è aumentato solo dell'<b>1,5%</b>. 
+              <br>
+              Alla luce di ciò, ci sono diverse possibili <b>spiegazioni</b>. 
+              Una è che le donne con esperienza hanno ora a disposizione una gamma più ampia di <b>opportunità</b> tra cui scegliere, come ad esempio 
+              posizioni dirigenziali che le incoraggiano a lasciare i consigli di amministrazione prima 
+              rispetto agli uomini, ma ancora non si riescono a trarre conclusioni certe. 
+            </p><br><br>
+
+            <h3>UN BILANCIO</h3>
+              <p>
+                Nel complesso, <mark>i risultati indicano un quadro contrastante</mark> per le donne che operano nei consigli di amministrazione del mondo: 
+                il <b>ritmo</b> del cambiamento rimane <b>lento</b>, e persiste un <b>divario</b> tra le donne presenti nei consigli di amministrazione e le donne che ricoprono posizioni di leadership esecutiva. Ciò significa che probabilmente 
+                probabilmente <mark>il dibattito sulla diversità nei consigli di amministrazione 
+                continuerà a infuriare ancora per un po'</mark>.
+              </p><br><br><br><br>
+
+            <hr>
+
+            <h3>ALCUNI GRAFICI RIASSUNTIVI DELLA SITUAZIONE</h3>
+            <br><br>
+              <details>
+                <summary>
+                  SITUAZIONE GLOBALE
+                </summary>
+                <table>
+                  <tbody>
+                    <tr><td><img src="immagini/CDAS3I1.jpg" alt=""></td></tr>
+                    <tr><td><img src="immagini/CDAS3I2.jpg" alt=""></td></tr>
+                  </tbody>
+                </table>
+              </details>
+            <br>
+              <details>
+                <summary>
+                  SITUAZIONE NORD-AMERICANA
+                </summary>
+                <table>
+                  <tbody>
+                    <tr>
+                      <td><img src="immagini/CDAS3I3.jpg" alt=""></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </details>
+
+              <details>
+                <summary>
+                  STATI UNITI
+                </summary>
+                <table>
+                  <tbody>
+                    <tr>
+                      <td><img src="immagini/CDAS3I4.jpg" alt=""></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </details>
+              <br>
+              <details>
+                <summary>
+                  SITUAZIONE LATINO-AMERICANA
+                </summary>
+                <table>
+                  <tbody>
+                    <tr>
+                      <td><img src="immagini/CDAS3I5.jpg" alt=""></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </details>
+              <br>
+              <details>
+                <summary>
+                  SITUAZIONE AFRICANA
+                </summary>
+                <table>
+                  <tbody>
+                    <tr>
+                      <td><img src="immagini/CDAS3I6.jpg" alt=""></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </details>
+              <br>
+              <details>
+                <summary>
+                  SITUAZIONE EUROPEA
+                </summary>
+                <table>
+                  <tbody>
+                    <tr>
+                      <td><img src="immagini/CDAS3I7.jpg" alt=""></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </details>
+              <details>
+                <summary>
+                  FRANCIA
+                </summary>
+                <table>
+                  <tbody>
+                    <tr>
+                      <td><img src="immagini/CDAS3I8.jpg" alt=""></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </details>
+              <details>
+                <summary>
+                  GERMANIA
+                </summary>
+                <table>
+                  <tbody>
+                    <tr>
+                      <td><img src="immagini/CDAS3I9.jpg" alt=""></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </details>
+              <details>
+                <summary>
+                  ITALIA
+                </summary>
+                <table>
+                  <tbody>
+                    <tr>
+                      <td><img src="immagini/CDAS3I10.jpg" alt=""></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </details>
+              <details>
+                <summary>
+                  NORVEGIA
+                </summary>
+                <table>
+                  <tbody>
+                    <tr>
+                      <td><img src="immagini/CDAS3I11.jpg" alt=""></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </details>
+              <details>
+                <summary>
+                  SVIZZERA
+                </summary>
+                <table>
+                  <tbody>
+                    <tr>
+                      <td><img src="immagini/CDAS3I12.jpg" alt=""></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </details>
+              <br>
+              <details>
+                <summary>
+                  SITUAZIONE ASIATICA
+                </summary>
+                <table>
+                  <tbody>
+                    <tr>
+                      <td><img src="immagini/CDAS3I13.jpg" alt=""></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </details>
+              <br>
+              <details>
+                <summary>
+                  SITUAZIONE "AUSTRASIATICA"
+                </summary>
+                <table>
+                  <tbody>
+                    <tr>
+                      <td><img src="immagini/CDAS3I14.jpg" alt=""></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </details>
+
+
+
+            <div class="bottone__articolo">
+        
+              <svg class="bottone-circolare" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="50" cy="50" r="50" />
+              </svg>
+              
+      
+              <svg class="testo-circolare" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="0" cy="0" r="0" />
+                <defs>
+                  <path id="textPath3" d="M15 50 C20 0 90 0 90 80"/>
+                </defs>
+                <text fill="black">
+                  <textPath xlink:href="#textPath3">FONTI</textPath>
+                </text>
+              </svg>
+            </div>
+
+            <div id="slide-3__fonti" class="nascondi">
+              <br><br><br><br><br><br>
+              <ul>
+                  <li>
+                    <a href="extra/Deloitte Report.pdf" download class="bt"><b>REPORT COMPLETO</b></a>
+                  </li>
+              </ul>
+            </div>
+
+          </div>
+
+
+
+          <div class="slide-4__content nascondi">
+            <p>
+              <mark>Sheryl Sandberg</mark>, (ormai ex) <span data-descr="Il direttore operativo (in inglese chief operating officer, in sigla COO) è un dirigente posto alle dirette dipendenze dell'amministratore delegato. Ha responsabilità di coordinamento e ottimizzazione delle attività operative e progettuali di un'azienda, al fine di renderle più efficaci e funzionali per il business."><b>COO</b></span> 
+              di Facebook, analizza i motivi per cui una percentuale minore di donne rispetto agli uomini raggiunge i vertici delle proprie professioni e offre 3 potenti consigli alle donne che puntano alla C-suite. [2010] <br><br>
+            </p>
+            <h3>IL VIDEO</h3>
+            <p>
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/18uDutylDa4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
+              </iframe>
+            </p>
+
+          </div>
+          
+
+
+
+
+
+
+
           <script>
             // Script per mostrare solo la slide cliccata, altrimenti si sovrappongono
             $(document).ready(function () {
-              $("#bottone-circolare").on("click", function () {
+              $(".bottone-circolare").on("click", function () {
                 $("#slide-1__fonti").toggleClass("nascondi")
-
+                $("#slide-2__fonti").toggleClass("nascondi")
+                $("#slide-3__fonti").toggleClass("nascondi")
+                $("#slide-4__fonti").toggleClass("nascondi")
+    
               });
             });
-
-
           </script>
 
-          <div class="slide-2__content nascondi">
-            <h3>2</h3>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet hic corporis fuga amet non, inventore labore veniam voluptates veritatis minus ea, voluptatem soluta, cumque quidem beatae magnam dolore fugit rerum!</p>
-          </div>
 
-          <div class="slide-3__content nascondi">
-            <h3>3</h3>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet hic corporis fuga amet non, inventore labore veniam voluptates veritatis minus ea, voluptatem soluta, cumque quidem beatae magnam dolore fugit rerum!</p>
-          </div>
-          
           <script>
             // Script per mostrare solo la slide cliccata, altrimenti si sovrappongono
             $(document).ready(function () {
@@ -567,6 +1010,7 @@
                 $('.slider__content.slide-1').toggleClass("nascondi");
                 $(".slide-2").toggleClass("nascondi");
                 $(".slide-3").toggleClass("nascondi");
+                $(".slide-4").toggleClass("nascondi");
                 $("#Sezione-1").toggleClass("nascondi");
                 $("#Sezione-2").toggleClass("nascondi");
                 $("#Sezione-3").toggleClass("nascondi");
@@ -578,6 +1022,7 @@
                 $(".slider-nav").toggleClass("nascondi");
                 $(".bottone").toggleClass("nascondi");
                 $(".slide-1__content").toggleClass("nascondi");
+                $("#END").toggleClass("nascondi");
 
 
               });
@@ -588,6 +1033,7 @@
                 $('.slider__content.slide-2').toggleClass("nascondi");
                 $(".slide-1").toggleClass("nascondi");
                 $(".slide-3").toggleClass("nascondi");
+                $(".slide-4").toggleClass("nascondi");
                 $("#Sezione-1").toggleClass("nascondi");
                 $("#Sezione-2").toggleClass("nascondi");
                 $("#Sezione-3").toggleClass("nascondi");
@@ -599,7 +1045,7 @@
                 $(".slider-nav").toggleClass("nascondi");
                 $(".bottone").toggleClass("nascondi");
                 $(".slide-2__content").toggleClass("nascondi");
-
+                $("#END").toggleClass("nascondi");
 
               });
             });
@@ -609,6 +1055,7 @@
                 $('.slider__content.slide-3').toggleClass("nascondi");
                 $(".slide-1").toggleClass("nascondi");
                 $(".slide-2").toggleClass("nascondi");
+                $(".slide-4").toggleClass("nascondi");
                 $("#Sezione-1").toggleClass("nascondi");
                 $("#Sezione-2").toggleClass("nascondi");
                 $("#Sezione-3").toggleClass("nascondi");
@@ -620,85 +1067,53 @@
                 $(".slider-nav").toggleClass("nascondi");
                 $(".bottone").toggleClass("nascondi");
                 $(".slide-3__content").toggleClass("nascondi");
+                $("#END").toggleClass("nascondi");
+
+              });
+            });
+            $(document).ready(function () {
+              $("#slide-4").on("click", function () {
+                $("#slide-4").toggleClass("absolute")
+                $('.slider__content.slide-4').toggleClass("nascondi");
+                $(".slide-1").toggleClass("nascondi");
+                $(".slide-2").toggleClass("nascondi");
+                $(".slide-3").toggleClass("nascondi");
+                $("#Sezione-1").toggleClass("nascondi");
+                $("#Sezione-2").toggleClass("nascondi");
+                $("#Sezione-3").toggleClass("nascondi");
+                $("#Sezione-4").toggleClass("nascondi");
+                $("#MENU").toggleClass("nascondi");
+                $("#TOP").toggleClass("nascondi");
+                $(".contenitore-slider").toggleClass("watch");
+                $(".slider").toggleClass("articolo");
+                $(".slider-nav").toggleClass("nascondi");
+                $(".bottone").toggleClass("nascondi");
+                $(".slide-4__content").toggleClass("nascondi");
+                $("#END").toggleClass("nascondi");
 
 
               });
             });
-            // $(document).ready(function () {
-            //   $("#slide-2").on("click", function () {
-            //     $('.slide-1').addClass("nascondi");
-            //     $(".slide-2").removeClass("nascondi");
-            //     $(".slide-3").addClass("nascondi");
-            //   });
-            // });
-            // $(document).ready(function () {
-            //   $("#slide-3").on("click", function () {
-            //     $('.slide-1').addClass("nascondi");
-            //     $(".slide-2").addClass("nascondi");
-            //     $(".slide-3").removeClass("nascondi");
-            //   });
-            // });
+
           </script>
       
 
-        <br><br><br><br><br><br><br><br><br><br>
-        
-        <div class="bottone watchBtn">
-          <a href="#TOP">
-            <!-- <circle cx="50" cy="50" r="50" /> -->
-            <svg
-              class="freccia-circolare"
-              xmlns="http://www.w3.org/2000/svg"
-              xmlns:xlink="http://www.w3.org/1999/xlink"
-              width="600"
-              zoomAndPan="magnify"
-              viewBox="0 0 450 449.999984"
-              height="600"
-              preserveAspectRatio="xMidYMid meet"
-              
-            >
-              <defs>
-                <clipPath id="EAAAAA">
-                  <path
-                    d="M 154.960938 181.125 L 295.210938 181.125 L 295.210938 268.875 L 154.960938 268.875 Z M 154.960938 181.125 "
-                    clip-rule="nonzero"
-                  />
-                </clipPath>
-              </defs>
-              <path
-                fill="blue"
-                d="M 405 225 C 405 227.945312 404.925781 230.890625 404.78125 233.832031 C 404.636719 236.773438 404.421875 239.710938 404.132812 242.644531 C 403.84375 245.574219 403.484375 248.496094 403.050781 251.410156 C 402.621094 254.324219 402.117188 257.226562 401.542969 260.117188 C 400.964844 263.003906 400.320312 265.878906 399.605469 268.738281 C 398.890625 271.59375 398.105469 274.433594 397.25 277.25 C 396.394531 280.070312 395.46875 282.867188 394.476562 285.640625 C 393.484375 288.414062 392.425781 291.160156 391.296875 293.882812 C 390.171875 296.605469 388.976562 299.296875 387.71875 301.960938 C 386.457031 304.621094 385.132812 307.253906 383.746094 309.851562 C 382.355469 312.449219 380.90625 315.011719 379.390625 317.539062 C 377.875 320.066406 376.300781 322.554688 374.664062 325.003906 C 373.027344 327.453125 371.332031 329.859375 369.578125 332.226562 C 367.824219 334.59375 366.011719 336.914062 364.140625 339.191406 C 362.273438 341.46875 360.347656 343.699219 358.371094 345.878906 C 356.394531 348.0625 354.363281 350.195312 352.277344 352.277344 C 350.195312 354.363281 348.0625 356.394531 345.878906 358.371094 C 343.699219 360.347656 341.46875 362.273438 339.191406 364.140625 C 336.914062 366.011719 334.59375 367.824219 332.226562 369.578125 C 329.859375 371.332031 327.453125 373.027344 325.003906 374.664062 C 322.554688 376.300781 320.066406 377.875 317.539062 379.390625 C 315.011719 380.90625 312.449219 382.355469 309.851562 383.746094 C 307.253906 385.132812 304.621094 386.457031 301.960938 387.71875 C 299.296875 388.976562 296.605469 390.171875 293.882812 391.296875 C 291.160156 392.425781 288.414062 393.484375 285.640625 394.476562 C 282.867188 395.46875 280.070312 396.394531 277.25 397.25 C 274.433594 398.105469 271.59375 398.890625 268.738281 399.605469 C 265.878906 400.320312 263.003906 400.964844 260.117188 401.542969 C 257.226562 402.117188 254.324219 402.621094 251.410156 403.050781 C 248.496094 403.484375 245.574219 403.84375 242.644531 404.132812 C 239.710938 404.421875 236.773438 404.636719 233.832031 404.78125 C 230.890625 404.925781 227.945312 405 225 405 C 222.054688 405 219.109375 404.925781 216.167969 404.78125 C 213.226562 404.636719 210.289062 404.421875 207.355469 404.132812 C 204.425781 403.84375 201.503906 403.484375 198.589844 403.050781 C 195.675781 402.621094 192.773438 402.117188 189.882812 401.542969 C 186.996094 400.964844 184.121094 400.320312 181.261719 399.605469 C 178.40625 398.890625 175.566406 398.105469 172.75 397.25 C 169.929688 396.394531 167.132812 395.46875 164.359375 394.476562 C 161.585938 393.484375 158.839844 392.425781 156.117188 391.296875 C 153.394531 390.171875 150.703125 388.976562 148.039062 387.71875 C 145.378906 386.457031 142.746094 385.132812 140.148438 383.746094 C 137.550781 382.355469 134.988281 380.90625 132.460938 379.390625 C 129.933594 377.875 127.445312 376.300781 124.996094 374.664062 C 122.546875 373.027344 120.140625 371.332031 117.773438 369.578125 C 115.40625 367.824219 113.085938 366.011719 110.808594 364.140625 C 108.53125 362.273438 106.300781 360.347656 104.121094 358.371094 C 101.9375 356.394531 99.804688 354.363281 97.722656 352.277344 C 95.636719 350.195312 93.605469 348.0625 91.628906 345.878906 C 89.652344 343.699219 87.726562 341.46875 85.859375 339.191406 C 83.988281 336.914062 82.175781 334.59375 80.421875 332.226562 C 78.667969 329.859375 76.972656 327.453125 75.335938 325.003906 C 73.699219 322.554688 72.125 320.066406 70.609375 317.539062 C 69.09375 315.011719 67.644531 312.449219 66.253906 309.851562 C 64.867188 307.253906 63.542969 304.621094 62.28125 301.960938 C 61.023438 299.296875 59.828125 296.605469 58.703125 293.882812 C 57.574219 291.160156 56.515625 288.414062 55.523438 285.640625 C 54.53125 282.867188 53.605469 280.070312 52.75 277.25 C 51.894531 274.433594 51.109375 271.59375 50.394531 268.738281 C 49.679688 265.878906 49.035156 263.003906 48.457031 260.117188 C 47.882812 257.226562 47.378906 254.324219 46.949219 251.410156 C 46.515625 248.496094 46.15625 245.574219 45.867188 242.644531 C 45.578125 239.710938 45.363281 236.773438 45.21875 233.832031 C 45.074219 230.890625 45 227.945312 45 225 C 45 222.054688 45.074219 219.109375 45.21875 216.167969 C 45.363281 213.226562 45.578125 210.289062 45.867188 207.355469 C 46.15625 204.425781 46.515625 201.503906 46.949219 198.589844 C 47.378906 195.675781 47.882812 192.773438 48.457031 189.882812 C 49.035156 186.996094 49.679688 184.121094 50.394531 181.261719 C 51.109375 178.40625 51.894531 175.566406 52.75 172.75 C 53.605469 169.929688 54.53125 167.132812 55.523438 164.359375 C 56.515625 161.585938 57.574219 158.839844 58.703125 156.117188 C 59.828125 153.394531 61.023438 150.703125 62.28125 148.039062 C 63.542969 145.378906 64.867188 142.746094 66.253906 140.148438 C 67.644531 137.550781 69.09375 134.988281 70.609375 132.460938 C 72.125 129.933594 73.699219 127.445312 75.335938 124.996094 C 76.972656 122.546875 78.667969 120.140625 80.421875 117.773438 C 82.175781 115.40625 83.988281 113.085938 85.859375 110.808594 C 87.726562 108.53125 89.652344 106.300781 91.628906 104.121094 C 93.605469 101.9375 95.636719 99.804688 97.722656 97.722656 C 99.804688 95.636719 101.9375 93.605469 104.121094 91.628906 C 106.300781 89.652344 108.53125 87.726562 110.808594 85.859375 C 113.085938 83.988281 115.40625 82.175781 117.773438 80.421875 C 120.140625 78.667969 122.546875 76.972656 124.996094 75.335938 C 127.445312 73.699219 129.933594 72.125 132.460938 70.609375 C 134.988281 69.09375 137.550781 67.644531 140.148438 66.253906 C 142.746094 64.867188 145.378906 63.542969 148.039062 62.28125 C 150.703125 61.023438 153.394531 59.828125 156.117188 58.703125 C 158.839844 57.574219 161.585938 56.515625 164.359375 55.523438 C 167.132812 54.53125 169.929688 53.605469 172.75 52.75 C 175.566406 51.894531 178.40625 51.109375 181.261719 50.394531 C 184.121094 49.679688 186.996094 49.035156 189.882812 48.457031 C 192.773438 47.882812 195.675781 47.378906 198.589844 46.949219 C 201.503906 46.515625 204.425781 46.15625 207.355469 45.867188 C 210.289062 45.578125 213.226562 45.363281 216.167969 45.21875 C 219.109375 45.074219 222.054688 45 225 45 C 227.945312 45 230.890625 45.074219 233.832031 45.21875 C 236.773438 45.363281 239.710938 45.578125 242.644531 45.867188 C 245.574219 46.15625 248.496094 46.515625 251.410156 46.949219 C 254.324219 47.378906 257.226562 47.882812 260.117188 48.457031 C 263.003906 49.035156 265.878906 49.679688 268.738281 50.394531 C 271.59375 51.109375 274.433594 51.894531 277.25 52.75 C 280.070312 53.605469 282.867188 54.53125 285.640625 55.523438 C 288.414062 56.515625 291.160156 57.574219 293.882812 58.703125 C 296.605469 59.828125 299.296875 61.023438 301.960938 62.28125 C 304.621094 63.542969 307.253906 64.867188 309.851562 66.253906 C 312.449219 67.644531 315.011719 69.09375 317.539062 70.609375 C 320.066406 72.125 322.554688 73.699219 325.003906 75.335938 C 327.453125 76.972656 329.859375 78.667969 332.226562 80.421875 C 334.59375 82.175781 336.914062 83.988281 339.191406 85.859375 C 341.46875 87.726562 343.699219 89.652344 345.878906 91.628906 C 348.0625 93.605469 350.195312 95.636719 352.277344 97.722656 C 354.363281 99.804688 356.394531 101.9375 358.371094 104.121094 C 360.347656 106.300781 362.273438 108.53125 364.140625 110.808594 C 366.011719 113.085938 367.824219 115.40625 369.578125 117.773438 C 371.332031 120.140625 373.027344 122.546875 374.664062 124.996094 C 376.300781 127.445312 377.875 129.933594 379.390625 132.460938 C 380.90625 134.988281 382.355469 137.550781 383.746094 140.148438 C 385.132812 142.746094 386.457031 145.378906 387.71875 148.039062 C 388.976562 150.703125 390.171875 153.394531 391.296875 156.117188 C 392.425781 158.839844 393.484375 161.585938 394.476562 164.359375 C 395.46875 167.132812 396.394531 169.929688 397.25 172.75 C 398.105469 175.566406 398.890625 178.40625 399.605469 181.261719 C 400.320312 184.121094 400.964844 186.996094 401.542969 189.882812 C 402.117188 192.773438 402.621094 195.675781 403.050781 198.589844 C 403.484375 201.503906 403.84375 204.425781 404.132812 207.355469 C 404.421875 210.289062 404.636719 213.226562 404.78125 216.167969 C 404.925781 219.109375 405 222.054688 405 225 Z M 405 225 "
-                fill-opacity="1"
-                fill-rule="nonzero"
-              />
-              <g clip-path="url(#EAAAAA)">
-                <path
-                  fill="#ffffff"
-                  d="M 171.496094 268.46875 L 225.085938 214.820312 L 278.671875 268.46875 L 295.210938 251.914062 L 225.085938 181.710938 L 154.960938 251.914062 Z M 171.496094 268.46875 "
-                  fill-opacity="1"
-                  fill-rule="nonzero"
-                />
-              </g>
-            </svg>
-          </a>
-        </div>
-
       </section>
 
-
-
-
     </main>
-
-
-
-
-    <footer id="END"></footer>
 
 
     <script src="script.js">
 
     </script>
+
+    <footer id="END">
+      <h5>Meyer Riccardo &copy;</h5>
+      <br>
+    </footer>
+
+
+
 
 
   </body>

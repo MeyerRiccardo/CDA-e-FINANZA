@@ -19,6 +19,10 @@
     --DAOCerchio2: 20.16;
     --DAOCerchio3: 100.8;
 
+    --bgCDA: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(0,0,0,0.822391456582633) 0%, rgba(255,255,255,0) 100%, rgba(255,255,255,1) 100%),
+    url(../immagini/nav-sfondo.jpg);
+    --bgFinanza: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(0,0,0,0.822391456582633) 0%, rgba(255,255,255,0) 100%, rgba(255,255,255,1) 100%),
+    url(../immagini/nav-sfondo2.jpg);
 
     --pink: #F424B9;
 }

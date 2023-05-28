@@ -9,13 +9,9 @@ body,html{
     /* overflow: hidden; */
     background-color: rgb(255, 255, 255);
     font-size: var(--fz);
-    opacity: 0;
-    animation: display 1.5s forwards cubic-bezier(0.075, 0.82, 0.165, 1);
+    opacity: 1;
+    /* animation: display 4s forwards; */
     scroll-behavior: smooth;
-}
-
-@keyframes display {
-    to{opacity: 1;}
 }
 
 
@@ -80,6 +76,17 @@ img{
     
 }
 
+td img{
+    width: 100%;
+    height: auto;
+}
+caption{
+    caption-side: bottom;
+    text-align: right;
+    font-size: 80%;
+    font-family: var(--subFont);
+}
+
 a{
     text-decoration: none;
     color: white;
@@ -98,6 +105,39 @@ blockquote{
     font-family: var(--handFont);
     font-size: 1.5rem;
 }
+
+details > summary {
+    list-style-type: ' 🚹 ';
+}
+
+details[open] > summary {
+    list-style-type: ' 🚺 ';
+}
+
+details {
+    border-radius: 0.2rem;
+    padding: 0.5rem;
+
+}
+
+
+details[open] > summary {
+    margin-bottom: 5%;
+}
+
+table{
+    max-width: 100%;
+}
+
+footer h5{
+    font-family: var(--handFont);
+    font-size: 2rem;
+    text-align: center;
+}
+
+
+
+
 
 
 
@@ -133,15 +173,20 @@ header{
 }
 
 .hero{
-    background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(0,0,0,0.822391456582633) 0%, rgba(255,255,255,0) 100%, rgba(255,255,255,1) 100%),
-    url(../immagini/nav-sfondo.jpg);
+    height: 100%; width: 100%;
+}
+#hero-CDA{
+    background: var(--bgCDA);
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-    
-    height: 100%; width: 100%;
 }
-
+#hero-Finanza{
+    background: var(--bgFinanza);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
 .hero__content{
     color: white;
     position:fixed;
@@ -184,7 +229,7 @@ section{
     display: flex;
     flex-flow: row wrap;
     justify-content: center; align-items: center;
-    
+
     transition: all 0.25s;
 }
 section>*{
@@ -336,6 +381,15 @@ span[data-descr]:active::after{
     height: auto;
     filter:drop-shadow(3px 3px 3px #F424B9)
 }
+
+
+.selected::after{
+    content: "";
+    display: inline-block;
+    border: 5px solid white; background: #FFF;
+    width: 5px; height: 5px;
+    border-radius: 50%;    
+}
 /* UTILITIES */
 
 
@@ -444,9 +498,7 @@ span[data-descr]:active::after{
         width:var(--BtnGrandezza);
         height: var(--BtnGrandezza);
         position: absolute;
-        border: 2px solid black;
         bottom: 0%;
-
         transition: all 0.25s;
     }
 
@@ -570,6 +622,28 @@ figcaption{
     background-size: cover;
     cursor: pointer;
 }
+#slide-4{
+    background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(0,0,0,0.6963410364145659) 71%, rgba(0,0,0,0.49746148459383754) 100%, rgba(255,255,255,0) 100%), url(../immagini/Graphs.png);
+    background-size: cover;
+    cursor: pointer;
+}
+
+.absolute{
+    position: absolute;
+
+    /* animation: prova 2s 0.5s forwards; */
+}
+
+@keyframes prova {
+    0%{
+        transform:scale(1);
+    }
+    50%{
+        transform: scale(0);}
+    100%{
+        transform: scale(1);
+    }
+}
 
 .nascondi{
     display: none;
@@ -600,37 +674,12 @@ figcaption{
 /* Fine */
 
 
-
-
-
-.absolute{
-    position: absolute;
-
-    /* animation: prova 2s 0.5s forwards; */
-}
-
-
-
-@keyframes prova {
-    0%{
-        transform:scale(1);
-    }
-    50%{
-        transform: scale(2);}
-    100%{
-        transform: scale(1);
-    }
-}
-
-
 .articolo{
     border-radius: 0;
     box-shadow: none;
 
-    animation: prova 2s 0s forwards;
+    animation: prova 1.5s 0s forwards;
 }
-
-
 
 .bottone__articolo{
     width:68px;
@@ -639,7 +688,7 @@ figcaption{
     right: 5%;
 }
 
-#bottone-circolare{
+.bottone-circolare{
     width:100%;
     height:auto;
     position:absolute;
@@ -649,14 +698,14 @@ figcaption{
     transition: width 0.5s;
 }
 
-#bottone-circolare:hover, #bottone-circolare:active{
+.bottone-circolare:hover, .bottone-circolare:active{
     fill:#F424B9;
     width:125%;
     height: auto;
     filter:drop-shadow(3px 3px 3px black)
 }
 
-#testo-circolare{
+.testo-circolare{
     width:50%; height:auto;
     position:absolute;
     top:50%;left: 50%;
@@ -665,7 +714,7 @@ figcaption{
     transition: width 0.5s;
 }
 
-#bottone-circolare:hover + #testo-circolare{
+.bottone-circolare:hover + .testo-circolare{
     width:200%;
     height: auto;
     /* filter:drop-shadow(3px 3px 3px black); */
@@ -677,27 +726,28 @@ figcaption{
 @media (max-width: 768px) {
     .bottone__articolo{
         width:51px;
-        position: fixed;
-        bottom: 10%;
-        right: 5%;
     }
 
-    #testo-circolare{
+    .testo-circolare{
         width:200%;
         height: auto;
     }
 
-    #bottone-circolare{
+    .bottone-circolare{
         width:100%;
         height:auto;
     }
-    #bottone-circolare:hover, #bottone-circolare:active{
+    .bottone-circolare:hover, .bottone-circolare:active{
         width:100%;
         height: auto;
     }
     
-
 }
+
+
+
+
+
 
 
 
