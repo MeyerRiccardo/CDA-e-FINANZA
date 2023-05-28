@@ -87,6 +87,11 @@ caption{
     font-family: var(--subFont);
 }
 
+iframe{
+    border: 3px solid var(--pink);
+    box-shadow: 6px 6px 6px black;
+}
+
 a{
     text-decoration: none;
     color: white;
