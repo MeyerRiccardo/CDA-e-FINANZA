@@ -79,6 +79,7 @@ img{
 td img{
     width: 100%;
     height: auto;
+    box-shadow: 6px 6px 6px grey;
 }
 caption{
     caption-side: bottom;
@@ -90,22 +91,18 @@ caption{
 iframe{
     border: 3px solid var(--pink);
     box-shadow: 6px 6px 6px black;
-    max-width: 100%;
+    min-width:50%; max-width: 100%;
     aspect-ratio: 16/9;
 }
 
 a{
     text-decoration: none;
-    color: white;
+    color: inherit;
 }
 
-p{
-    font-family: var(--pFont);
-}
+p{font-family: var(--pFont);}
 
-b{
-    font-style: italic;
-}
+b{font-style: italic;}
 
 /* GENERALI */
 blockquote{
@@ -247,6 +244,7 @@ section>*{
 section ul li{
     list-style-type: disc;
     padding-left: 3%;
+    margin-bottom: 3vh;
 }
 
 @media (max-width:768px) {
@@ -407,11 +405,11 @@ span[data-descr]:active::after{
 @media (max-width:768px) {
 
     body,html{
-        font-size: calc(var(--fz)*0.69);
+        font-size: calc(var(--fz)*0.75);
     }
 
     h2{
-        font-size: 2.25rem;
+        font-size: 2rem;
     }
 
     #MENU {
@@ -637,7 +635,22 @@ figcaption{
     cursor: pointer;
 }
 #slide-4{
-    background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(0,0,0,0.6963410364145659) 71%, rgba(0,0,0,0.49746148459383754) 100%, rgba(255,255,255,0) 100%), url(../immagini/Graphs.png);
+    background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(0,0,0,0.6963410364145659) 71%, rgba(0,0,0,0.49746148459383754) 100%, rgba(255,255,255,0) 100%), url(../immagini/Sheryl.png);
+    background-size: cover;
+    cursor: pointer;
+}
+#slide-5{
+    background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(0,0,0,0.6963410364145659) 71%, rgba(0,0,0,0.49746148459383754) 100%, rgba(255,255,255,0) 100%), url(../immagini/GS.jpg);
+    background-size: cover;
+    cursor: pointer;
+}
+#slide-6{
+    background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(0,0,0,0.6963410364145659) 71%, rgba(0,0,0,0.49746148459383754) 100%, rgba(255,255,255,0) 100%), url(../immagini/Principio.jpg);
+    background-size: cover;
+    cursor: pointer;
+}
+#slide-7{
+    background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(0,0,0,0.6963410364145659) 71%, rgba(0,0,0,0.49746148459383754) 100%, rgba(255,255,255,0) 100%), url(../immagini/Azioni.png);
     background-size: cover;
     cursor: pointer;
 }
